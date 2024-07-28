@@ -1,0 +1,231 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(-45deg, #6b86ff, #ff6bcb, #ffde6b, #6bffa1);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 20s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.task-input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#new-task, #task-due-date, #task-priority, #task-category {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#task-priority, #task-category {
+    max-width: 120px;
+}
+
+#add-task-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#add-task-button:hover {
+    background-color: #4cae4c;
+}
+
+#theme-toggle {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #f0ad4e;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+#theme-toggle:hover {
+    background-color: #ec971f;
+}
+
+#search-task, #sort-tasks {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    border-left: 5px solid transparent;
+    transition: transform 0.3s;
+}
+
+.task-item:hover {
+    transform: scale(1.02);
+}
+
+.task-item.completed {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.task-item.overdue {
+    background-color: #ffdddd;
+}
+
+.task-item.due-today {
+    background-color: #ffebcc;
+}
+
+.task-item.due-soon {
+    background-color: #fff7b8;
+}
+
+.task-item.low-priority {
+    border-left-color: #0099ff;
+}
+
+.task-item.medium-priority {
+    border-left-color: #ff9933;
+}
+
+.task-item.high-priority {
+    border-left-color: #ff3333;
+}
+
+.task-item button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.task-item button.complete-btn {
+    color: #5cb85c;
+}
+
+.task-item button.delete-btn {
+    color: #d9534f;
+}
+
+.task-item button.star-btn {
+    color: #f0ad4e;
+}
+
+.task-item .task-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-item .task-category,
+.task-item .task-priority,
+.task-item .task-due-date {
+    font-size: 12px;
+    color: #666;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.progress {
+    width: 0;
+    height: 10px;
+    background-color: #4caf50;
+    border-radius: 4px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.dark-mode .container {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode .task-item {
+    color: #fff;
+}
+
+.dark-mode #add-task-button,
+.dark-mode #theme-toggle {
+    background-color: #333;
+    color: white;
+}
+.dark-mode h1{
+    color: #ddd;
+}

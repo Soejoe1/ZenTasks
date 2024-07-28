@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenTasks- Your Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <div class="container">
+        <h1>ZenTasks</h1>
+        <div class="task-input">
+            <input type="text" id="new-task" placeholder="Add a new task...">
+            <input type="date" id="task-due-date">
+            <select id="task-priority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <select id="task-category">
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Other">Other</option>
+            </select>
+            <button id="add-task-button">Add Task</button>
+        </div>
+        <button id="theme-toggle">Toggle Dark Mode</button>
+        <input type="text" id="search-task" placeholder="Search tasks...">
+        <select id="sort-tasks">
+            <option value="priority">Sort by Priority</option>
+            <option value="due-date">Sort by Due Date</option>
+            <option value="category">Sort by Category</option>
+        </select>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <p id="task-stats"></p>
+        <ul id="task-list"></ul>
+    </div>
+    <div id="motivational-quote-modal" class="modal">
+        <div class="modal-content">
+            <p id="motivational-quote"></p>
+            <button id="close-modal">Close</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
